@@ -98,27 +98,6 @@
                 <parent>0</parent>
                 <components>
                     <component>
-                        <type>class OvCore::ECS::Components::CModelRenderer</type>
-                        <data>
-                            <model>:Models\Plane.fbx</model>
-                            <frustum_behaviour>1</frustum_behaviour>
-                            <custom_bounding_sphere_position>
-                                <x>0</x>
-                                <y>0</y>
-                                <z>0</z>
-                            </custom_bounding_sphere_position>
-                            <custom_bounding_sphere_radius>1</custom_bounding_sphere_radius>
-                        </data>
-                    </component>
-                    <component>
-                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
-                        <data>
-                            <materials>
-                                <material>Ground.ovmat</material>
-                            </materials>
-                        </data>
-                    </component>
-                    <component>
                         <type>class OvCore::ECS::Components::CPhysicalBox</type>
                         <data>
                             <is_trigger>false</is_trigger>
@@ -142,6 +121,27 @@
                                 <y>0.5</y>
                                 <z>0.5</z>
                             </size>
+                        </data>
+                    </component>
+                    <component>
+                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
+                        <data>
+                            <materials>
+                                <material>Ground.ovmat</material>
+                            </materials>
+                        </data>
+                    </component>
+                    <component>
+                        <type>class OvCore::ECS::Components::CModelRenderer</type>
+                        <data>
+                            <model>:Models\Plane.fbx</model>
+                            <frustum_behaviour>1</frustum_behaviour>
+                            <custom_bounding_sphere_position>
+                                <x>0</x>
+                                <y>0</y>
+                                <z>0</z>
+                            </custom_bounding_sphere_position>
+                            <custom_bounding_sphere_radius>1</custom_bounding_sphere_radius>
                         </data>
                     </component>
                     <component>
@@ -176,27 +176,6 @@
                 <parent>0</parent>
                 <components>
                     <component>
-                        <type>class OvCore::ECS::Components::CModelRenderer</type>
-                        <data>
-                            <model>:Models\Sphere.fbx</model>
-                            <frustum_behaviour>1</frustum_behaviour>
-                            <custom_bounding_sphere_position>
-                                <x>0</x>
-                                <y>0</y>
-                                <z>0</z>
-                            </custom_bounding_sphere_position>
-                            <custom_bounding_sphere_radius>1</custom_bounding_sphere_radius>
-                        </data>
-                    </component>
-                    <component>
-                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
-                        <data>
-                            <materials>
-                                <material>Ball.ovmat</material>
-                            </materials>
-                        </data>
-                    </component>
-                    <component>
                         <type>class OvCore::ECS::Components::CPhysicalSphere</type>
                         <data>
                             <is_trigger>false</is_trigger>
@@ -219,18 +198,39 @@
                         </data>
                     </component>
                     <component>
-                        <type>class OvCore::ECS::Components::CTransform</type>
+                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
                         <data>
-                            <position>
-                                <x>0</x>
-                                <y>0.5</y>
-                                <z>0</z>
-                            </position>
-                            <rotation>
+                            <materials>
+                                <material>Ball.ovmat</material>
+                            </materials>
+                        </data>
+                    </component>
+                    <component>
+                        <type>class OvCore::ECS::Components::CModelRenderer</type>
+                        <data>
+                            <model>:Models\Sphere.fbx</model>
+                            <frustum_behaviour>1</frustum_behaviour>
+                            <custom_bounding_sphere_position>
                                 <x>0</x>
                                 <y>0</y>
                                 <z>0</z>
-                                <w>1</w>
+                            </custom_bounding_sphere_position>
+                            <custom_bounding_sphere_radius>1</custom_bounding_sphere_radius>
+                        </data>
+                    </component>
+                    <component>
+                        <type>class OvCore::ECS::Components::CTransform</type>
+                        <data>
+                            <position>
+                                <x>0.029139979</x>
+                                <y>0.99999994</y>
+                                <z>-0.023132224</z>
+                            </position>
+                            <rotation>
+                                <x>-0.02386399</x>
+                                <y>2.4402481e-05</y>
+                                <z>-0.029138044</z>
+                                <w>0.99929047</w>
                             </rotation>
                             <scale>
                                 <x>0.5</x>
@@ -255,10 +255,6 @@
                 <parent>0</parent>
                 <components>
                     <component>
-                        <type>class OvCore::ECS::Components::CAudioListener</type>
-                        <data/>
-                    </component>
-                    <component>
                         <type>class OvCore::ECS::Components::CCamera</type>
                         <data>
                             <fov>45</fov>
@@ -276,12 +272,16 @@
                         </data>
                     </component>
                     <component>
+                        <type>class OvCore::ECS::Components::CAudioListener</type>
+                        <data/>
+                    </component>
+                    <component>
                         <type>class OvCore::ECS::Components::CTransform</type>
                         <data>
                             <position>
-                                <x>0</x>
-                                <y>5</y>
-                                <z>-10</z>
+                                <x>0.029015893</x>
+                                <y>5.9999981</y>
+                                <z>-10.023032</z>
                             </position>
                             <rotation>
                                 <x>0.17364819</x>
@@ -312,19 +312,6 @@
                 <parent>0</parent>
                 <components>
                     <component>
-                        <type>class OvCore::ECS::Components::CAudioSource</type>
-                        <data>
-                            <autoplay>false</autoplay>
-                            <spatial>false</spatial>
-                            <volume>1</volume>
-                            <pan>0</pan>
-                            <looped>false</looped>
-                            <pitch>1</pitch>
-                            <attenuation_threshold>1</attenuation_threshold>
-                            <audio_clip>Audio\Pickup.wav</audio_clip>
-                        </data>
-                    </component>
-                    <component>
                         <type>class OvCore::ECS::Components::CPhysicalBox</type>
                         <data>
                             <is_trigger>true</is_trigger>
@@ -351,6 +338,19 @@
                         </data>
                     </component>
                     <component>
+                        <type>class OvCore::ECS::Components::CAudioSource</type>
+                        <data>
+                            <autoplay>false</autoplay>
+                            <spatial>false</spatial>
+                            <volume>1</volume>
+                            <pan>0</pan>
+                            <looped>false</looped>
+                            <pitch>1</pitch>
+                            <attenuation_threshold>1</attenuation_threshold>
+                            <audio_clip>Audio\Pickup.wav</audio_clip>
+                        </data>
+                    </component>
+                    <component>
                         <type>class OvCore::ECS::Components::CTransform</type>
                         <data>
                             <position>
@@ -372,7 +372,12 @@
                         </data>
                     </component>
                 </components>
-                <behaviours/>
+                <behaviours>
+                    <behaviour>
+                        <type>PickupController</type>
+                        <data/>
+                    </behaviour>
+                </behaviours>
             </actor>
             <actor>
                 <name>Collectable</name>
@@ -381,14 +386,6 @@
                 <id>8</id>
                 <parent>7</parent>
                 <components>
-                    <component>
-                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
-                        <data>
-                            <materials>
-                                <material>Collectable.ovmat</material>
-                            </materials>
-                        </data>
-                    </component>
                     <component>
                         <type>class OvCore::ECS::Components::CModelRenderer</type>
                         <data>
@@ -403,6 +400,14 @@
                         </data>
                     </component>
                     <component>
+                        <type>class OvCore::ECS::Components::CMaterialRenderer</type>
+                        <data>
+                            <materials>
+                                <material>Collectable.ovmat</material>
+                            </materials>
+                        </data>
+                    </component>
+                    <component>
                         <type>class OvCore::ECS::Components::CTransform</type>
                         <data>
                             <position>
@@ -411,10 +416,10 @@
                                 <z>0</z>
                             </position>
                             <rotation>
-                                <x>0.38268346</x>
-                                <y>0</y>
-                                <z>0</z>
-                                <w>0.9238795</w>
+                                <x>0.30212519</x>
+                                <y>0.30212519</y>
+                                <z>-0.10160276</z>
+                                <w>0.89839721</w>
                             </rotation>
                             <scale>
                                 <x>0.5</x>
