@@ -1,11 +1,15 @@
 local PickupController =
 {
-    spinSpeed = 60.0 -- degrees per second
+    spinSpeed = 60.0, -- degrees per second
+    collected = false,
+    destructionTimer = nil,
+    destructionDelay = 0.2 -- time before pickup disappears
 
 }
 
 function PickupController:OnStart()
     self.transform = self.owner:GetTransform()
+    self.audio = self.owner:GetAudioSource()
 
     -- Get mesh from child object
     local children = self.owner:GetChildren()
@@ -37,6 +41,31 @@ function PickupController:OnUpdate(deltaTime)
         -- Combine rotations X * Y
         local finalQuat = quatY * quatX
         self.meshTransform:SetRotation(finalQuat)
+    end
+    -- make actor disappear after audio plays
+    if self.collected and self.destructionTimer ~= nil then
+        self.destructionTimer = self.destructionTimer - deltaTime
+        if self.destructionTimer <= 0 then
+            self.owner:SetActive(false) -- make actor disappear
+        end
+    end
+end
+
+-- When Player and Pickup collide
+function PickupController:OnTriggerEnter(other)
+    local actor = nil
+    if other ~= nil and other.GetOwner ~= nil then
+        actor = other:GetOwner()
+    end
+
+    if self.collected then return end
+
+    if actor ~= nil and actor:GetTag() == "Player" then
+        self.collected = true
+        if self.audio ~= nil then
+            self.audio:Play()
+        end
+        self.destructionTimer = self.destructionDelay
     end
 end
 

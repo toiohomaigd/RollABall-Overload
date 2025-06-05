@@ -1,6 +1,6 @@
 local BallController =
 {
-    speed = 8.0
+    speed = 15
 }
 
 function BallController:OnStart()
